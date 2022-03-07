@@ -1,0 +1,312 @@
+//////////// header ///////////
+.header {
+  &__holder {
+    @include flexbox(space-between, center, row);
+    @include wrapper();
+    margin-top: 10px;
+    @include breakpoint(phone) {
+      @include container();
+    }
+  }
+
+  &__logo {
+    display: block;
+    @include breakpoint(phone);
+    &:hover {
+      opacity: 0.5;
+      transition: $transition;
+    }
+  }
+
+  &__logo__src {
+    height: 47px;
+    display: block;
+    margin-top: 10px;
+    @include breakpoint(phone) {
+      min-height: 20px;
+    }
+  }
+}
+
+//////////// nav ///////////
+.nav {
+  &__list {
+    @include flexbox(space-between, center, row);
+    list-style-type: none;
+  }
+  &__link {
+    @include font(16px, 18px, 700, $primary-color);
+    text-decoration: none;
+    margin-left: 20px;
+    &:hover {
+      color: $secondary-color;
+      transition: $transition;
+    }
+  }
+}
+
+//////////// banner ///////////
+.banner {
+  padding-top: 20px;
+  &__picture {
+    @extend %cover;
+    display: inline-block;
+    padding: 110px;
+    width: 100%;
+    position: relative;
+    z-index: -2;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: $black;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0.6;
+    }
+    @include breakpoint(phone) {
+      padding: 60px;
+    }
+  }
+
+  &__title {
+    @include font(37px, 39px, 700, $white);
+    margin-bottom: 25px;
+    display: block;
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 576px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    @include font(20px, 22px, 400, $white);
+    display: block;
+    @include breakpoint(phone) {
+      line-height: 30px;
+    }
+  }
+}
+//////////// numbers ///////////
+.results {
+  padding: 40px;
+  background-color: $secondary-color;
+  @include breakpoint(phone) {
+    padding: 20px;
+  }
+
+  &__holder {
+    @include wrapper();
+    @include flexbox(space-around, center, row);
+    @include breakpoint(phone) {
+      @include flexbox(space-between, center, column);
+    }
+  }
+
+  &__col {
+    @include breakpoint(phone) {
+      text-align: center;
+      margin-bottom: 25px;
+      margin-top: 25px;
+    }
+  }
+
+  &__number {
+    @include font(20px, 22px, 700, $white);
+    display: inline-block;
+    margin: 0 0 10px 10px;
+  }
+
+  &__text {
+    @include font(16px, 20px, 400, $white);
+  }
+
+  &__icon {
+    position: relative;
+  }
+
+  &__svg {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    fill: $white;
+    top: -5px;
+    left: -35px;
+  }
+}
+
+//////////// about ///////////
+.about {
+  &__holder {
+    @include flexbox(center, center, row);
+    @include breakpoint(phone) {
+      @include flexbox(space-between, center, column);
+      @include container();
+    }
+  }
+
+  &__title {
+    @include font(28px, 30px, 700, $primary-color);
+    margin: 0 0 25px 18px;
+    @include breakpoint(phone) {
+      margin-top: 10px;
+    }
+  }
+
+  &__content {
+    @include breakpoint(phone) {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    @include font(20px, 30px, 400, $primary-color);
+    margin: 0 0 20px 18px;
+    max-width: 580px;
+  }
+
+  &__picture {
+    max-height: 500px;
+    max-width: auto;
+    display: inline-block;
+  }
+
+  &__picture-src {
+    width: 100%;
+    display: inline-block;
+  }
+
+  &__signature {
+    max-width: 300px;
+    max-height: auto;
+    margin-left: 20px;
+  }
+}
+
+//////////// project ///////////
+.project {
+  &__holder {
+    text-align: center;
+    max-width: 665px;
+    margin: 0 auto;
+    padding: 70px;
+  }
+
+  &__title {
+    @include font(33px, 35px, 700, $primary-color);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  &__text {
+    @include font(20px, 25px, 400, $primary-color);
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  &__link {
+    @include font(14px, 16px, 400, $white);
+    display: inline-block;
+    text-decoration: none;
+    padding: 19px 48px;
+    cursor: pointer;
+    background-color: $secondary-color;
+    &:hover {
+      background-color: $primary-color;
+      transition: $transition;
+    }
+  }
+}
+
+//////////// footer ///////////
+.footer {
+  background-color: $black;
+  padding: 60px;
+  @include breakpoint(phone) {
+    padding: 20px;
+  }
+
+  &__holder {
+    @include flexbox(space-between, center, row);
+    @include wrapper();
+  }
+
+  &__design {
+    @include font(18px, 20px, 700, $white);
+    display: block;
+    margin-bottom: 15px;
+    @include breakpoint(phone) {
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__rights {
+    @include font(16px, 18px, 400, $white);
+    display: block;
+    margin-bottom: 5px;
+    @include breakpoint(phone) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__designer {
+    display: block;
+    @include font(16px, 18px, 400, $white);
+    @include breakpoint(phone) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__email {
+    &__link {
+      text-decoration: none;
+      @include font(18px, 20px, 400, $white);
+      display: inline-block;
+      margin-bottom: 5px;
+      cursor: pointer;
+      @include breakpoint(phone) {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      &:hover {
+        color: $secondary-color;
+        transition: $transition;
+      }
+    }
+  }
+
+  &__number {
+    @include font(18px, 20px, 400, $white);
+    display: block;
+    @include breakpoint(phone) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include font(18px, 20px, 400, $white);
+    margin-bottom: 7px;
+    display: block;
+    cursor: pointer;
+    @include breakpoint(phone) {
+      font-size: 16px;
+      line-height: 18px;
+      margin-left: 10px;
+    }
+    &:hover {
+      color: $secondary-color;
+      transition: $transition;
+    }
+  }
+}
