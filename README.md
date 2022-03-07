@@ -1,2 +1,4 @@
-# Amelia
-Single page website.
+- The name of this project is Amelia Web Designer.
+- This is a single page website made for the purpose of practicing. 
+- The whole project was built using semantic HTML5, CSS3 with the preprocessor SCSS. 
+- Feel free to tell your opinion about this project, download it for the purpose of practice.
