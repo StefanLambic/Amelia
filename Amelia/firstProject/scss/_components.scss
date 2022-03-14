@@ -1,16 +1,16 @@
 //////////// header ///////////
 .header {
-  &__holder {
-    @include flexbox(space-between, center, row);
-    @include wrapper();
-    margin-top: 10px;
-    @include breakpoint(phone) {
-      @include container();
-    }
+  @include flexbox(space-between, center, row);
+  @include wrapper();
+  padding: 10px 20px 10px 20px;
+  @include breakpoint(phone) {
+    @include container();
   }
 
   &__logo {
     display: block;
+    max-width: 47px;
+    max-height: 47px;
     @include breakpoint(phone);
     &:hover {
       opacity: 0.5;
@@ -19,7 +19,8 @@
   }
 
   &__logo__src {
-    height: 47px;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin-top: 10px;
     @include breakpoint(phone) {
@@ -47,11 +48,10 @@
 
 //////////// banner ///////////
 .banner {
-  padding-top: 20px;
   &__picture {
     @extend %cover;
     display: inline-block;
-    padding: 110px;
+    padding: 110px 0;
     width: 100%;
     position: relative;
     z-index: -2;
@@ -108,11 +108,23 @@
   }
 
   &__col {
+    position: relative;
     @include breakpoint(phone) {
       text-align: center;
       margin-bottom: 25px;
       margin-top: 25px;
     }
+  }
+  &__icon {
+    position: absolute;
+    top: -5px;
+    left: -35px;
+  }
+
+  &__svg {
+    height: 30px;
+    width: 30px;
+    fill: $white;
   }
 
   &__number {
@@ -123,19 +135,6 @@
 
   &__text {
     @include font(16px, 20px, 400, $white);
-  }
-
-  &__icon {
-    position: relative;
-  }
-
-  &__svg {
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    fill: $white;
-    top: -5px;
-    left: -35px;
   }
 }
 
@@ -287,15 +286,18 @@
   &__number {
     @include font(18px, 20px, 400, $white);
     display: block;
+    &:hover {
+      color: $secondary-color;
+      transition: $transition;
+    }
     @include breakpoint(phone) {
-      margin-left: 5px;
-      margin-right: 5px;
+      margin: 0 5px 0 5px;
     }
   }
 
   &__link {
-    text-decoration: none;
     @include font(18px, 20px, 400, $white);
+    text-decoration: none;
     margin-bottom: 7px;
     display: block;
     cursor: pointer;
